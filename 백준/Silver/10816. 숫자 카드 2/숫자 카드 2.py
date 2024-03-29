@@ -1,4 +1,7 @@
 from collections import defaultdict
+import sys
+input = sys.stdin.readline
+
 N = int(input())
 card = list(map(int, input().split()))
 M = int(input())
