@@ -5,7 +5,7 @@ from heapq import *
 n = int(input())
 
 heap = []
-heapify(heap)
+
 for i in range(n):
     # 첫 번째 행의 값들 입력
     table = list(map(int, input().split()))
