@@ -11,4 +11,4 @@ exts = list(save.keys())
 exts.sort()
 
 for ext in exts:
-    print(f'{ext} {save[ext]}')
+    print(ext, save[ext])
