@@ -1,19 +1,29 @@
-T = int(input())
+'''
+stack 자료구조에 괄호 하나씩을 넣으면서 VPS 가 되면 pop.
+')' 괄호가 첫번째에 오는 경우 예외처리 필요.
+'''
+import sys
+input = sys.stdin.readline
 
-for i in range(T):
+t = int(input())
+# 괄호 입력
+pts = [input().rstrip() for _ in range(t)]
+
+for ps in pts:
     stack = []
-    a=input()
-    for j in a:
+    for j in ps:
         if j == '(':
             stack.append(j)
-        elif j == ')':
-            if stack:
-                stack.pop()
-            else: # 스택에 괄호가 없을경우 NO
-                print("NO")
+        # ')'인 경우
+        else:
+            # stack이 비어있을 경우 예외 처리
+            if not stack:
+                stack.append(j)
                 break
-    else: # break문으로 끊기지 않고 수행됬을경우 수행한다
-        if not stack: # break문으로 안끊기고 스택이 비어있다면 괄호가 다 맞는거다.
-            print("YES")
-        else: # break안 걸렸더라도 스택에 괄호가 들어있다면 NO이다.
-            print("NO")
+            else:
+                stack.pop()
+
+    if stack:
+        print('NO')
+    else:
+        print('YES')
